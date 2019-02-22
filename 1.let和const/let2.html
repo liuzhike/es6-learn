@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    let 用来声明变量的命令
+    不存在变量提升
+    */
+
+    // var 的情况
+    console.log(foo); // 输出undefined
+    var foo = 2;
+
+    // let 的情况
+    console.log(bar); // 报错ReferenceError
+    let bar = 2;
+    
+
+</script>
+</body>
+</html>

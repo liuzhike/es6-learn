@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    let 用来声明变量的命令
+    暂时性死区
+    只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响
+    在代码块内，使用let命令声明变量之前，该变量都是不可用的
+    暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量
+    */
+
+    var tmp = 123;
+
+    if (true) {
+        // let tmp;
+        tmp = 'abc'; // 在声明前使用会报错  ReferenceError
+        let tmp;
+    }
+    
+
+</script>
+</body>
+</html>

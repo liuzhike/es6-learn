@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    let 用来声明变量的命令
+    不允许重复声明
+    let不允许在相同的作用域内，重复声明一个变量
+    */
+
+    // 报错
+    function func1() {
+        let a = 10;
+        var a = 1;
+    }
+
+    // 报错
+    function func2() {
+        let a = 10;
+        let a = 1;
+    }
+    // 正确
+    function func3() {
+        let a = 10;
+        let b = 11;
+    }
+    
+
+</script>
+</body>
+</html>

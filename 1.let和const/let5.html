@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    let 用来声明变量的命令
+    块级作用域与函数声明
+
+    ES5   函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明
+    ES6   允许在块级作用域声明，在块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用
+
+    es6环境浏览器行为
+    1.允许在块级作用域内声明函数。
+    2.函数声明类似于var，即会提升到全局作用域或函数作用域的头部。
+    3.同时，函数声明还会提升到所在的块级作用域的头部。
+
+    在浏览器的 ES6 环境中，块级作用域内声明的函数，行为类似于var声明的变量
+
+    总结：
+    考虑到环境导致的行为差异太大，应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句
+    let a = function(){}
+    */
+
+    // 函数表达式
+    {
+        let a = 'secret';
+        let f = function () {
+            return a;
+        };
+    }
+
+    // 函数声明语句
+    {
+        let a = 'secret';
+        function f() {
+            return a;
+        }
+    }
+    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    let 用来声明变量的命令
+    声明的变量只在它所在的代码块内有效，作用域是块级的
+    */
+
+    {
+        let a = 111;
+        var b = 222;
+        console.log(a); //111
+    }
+
+    // ReferenceError: a is not defined.
+    console.log(a);
+    // 1
+    console.log(b);
+    
+
+</script>
+</body>
+</html>

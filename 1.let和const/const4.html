@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    const 声明一个只读的常量
+
+    const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。
+    */
+    if (true) {
+        console.log(MAX); // ReferenceError
+        const MAX = 5;
+    }
+</script>
+</body>
+</html>

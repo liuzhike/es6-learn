@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
+
+    数组解构，数组的元素是按次序排列的
+    对象解构，对象的元素是按属性名
+
+    */
+    // 属性名一致
+    let { foo, bar } = { foo: "aaa", bar: "bbb" };
+    foo // "aaa"
+    bar // "bbb"
+
+    // 属性名不一致
+    // foo是匹配的模式，baz才是变量
+    let { foo: baz } = { foo: 'aaa', bar: 'bbb' };
+    baz // "aaa"
+
+    let obj = { first: 'hello', last: 'world' };
+    let { first: f, last: l } = obj;
+    f // 'hello'
+    l // 'world'
+
+    /*
+    * 对象的解构也可以指定默认值。
+    * 默认值生效的条件是，对象的属性值严格等于undefined。
+    * */
+    var {x = 3} = {x: undefined};
+    x // 3
+
+    var {x = 3} = {x: null};
+    x // null
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    const 声明一个只读的常量
+
+   不可重复声明
+    */
+    var message = "Hello!";
+    let age = 25;
+
+    // 以下两行都会报错
+    const message = "Goodbye!";
+    const age = 30;
+</script>
+</body>
+</html>

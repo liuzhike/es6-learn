@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    const 声明一个只读的常量
+    只在声明所在的块级作用域内有效。
+    */
+    if (true) {
+        const MAX = 5;
+    }
+
+    MAX // Uncaught ReferenceError: MAX is not defined
+</script>
+</body>
+</html>

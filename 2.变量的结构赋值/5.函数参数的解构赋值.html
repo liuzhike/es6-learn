@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
+
+    函数的参数也可以使用解构赋值。
+    */
+
+    function add([x, y]){
+        return x + y;
+    }
+
+    add([1, 2]); // 3
+
+    // 使用默认值
+    function move({x = 0, y = 0} = {}) {
+        return [x, y];
+    }
+
+    move({x: 3, y: 8}); // [3, 8]
+    move({x: 3}); // [3, 0]
+    move({}); // [0, 0]
+    move(); // [0, 0]
+
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/traceur.js"></script>
+    <script src="../lib/BrowserSystem.js"></script>
+    <script src="../lib/bootstrap.js"></script>
+</head>
+<body>
+
+<script type="module">
+    /*
+    ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
+    */
+    // ES5
+    let a = 1;
+    let b = 2;
+    let c = 3;
+
+    // ES6
+    let [a, b, c] = [1, 2, 3];
+
+    let [foo, [[bar], baz]] = [1, [[2], 3]];
+    foo // 1
+    bar // 2
+    baz // 3
+
+    /*
+    * 模式匹配
+    * 只要等号两边的模式相同，左边的变量就会被赋予对应的值
+    * */
+    let [ , , third] = ["foo", "bar", "baz"];
+    third // "baz"
+
+    let [x, , y] = [1, 2, 3];
+    x // 1
+    y // 3
+
+    let [head, ...tail] = [1, 2, 3, 4];
+    head // 1
+    tail // [2, 3, 4]
+
+    let [x, y, ...z] = ['a'];
+    x // "a"
+    y // undefined
+    z // []
+
+    /*
+    * 不完全解构
+    * */
+    let [x, y] = [1, 2, 3];
+    x // 1
+    y // 2
+
+    let [a, [b], d] = [1, [2, 3], 4];
+    a // 1
+    b // 2
+    d // 4
+
+    /*
+    * 可指定默认值
+    * */
+
+    let [foo = true] = [];
+    foo // true
+
+    let [x, y = 'b'] = ['a']; // x='a', y='b'
+    let [x, y = 'b'] = ['a', undefined]; // x='a', y='b'
+
+</script>
+</body>
+</html>
